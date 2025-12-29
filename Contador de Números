@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Contador_de_Numeros  {
+        public static void main(String[] args) {
+            // Crear objeto scanner para leer la entrada del usuario
+            Scanner teclado = new Scanner(System.in);
+
+            System.out.print("Introduce un número límite (N): ");
+            int n = teclado.nextInt();
+
+            int sumaTotal = 0; // Variable acumuladora para el extra
+
+            System.out.println("--- Contando del 1 al " + n + " ---");
+
+            // Bucle para recorrer del 1 al N
+            for (int i = 1; i <= n; i++) {
+                System.out.println(i);
+                sumaTotal += i; // Sumar el valor actual al total
+            }
+
+            // Mostrar el resultado extra
+            System.out.println("...................");
+            System.out.println("La suma total de los números es: " + sumaTotal);
+
+            teclado.close();
+        }
+    }
+
