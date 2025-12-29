@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Mayor_de_3_Numeros{
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            System.out.print("Ingrese el primer número: ");
+            double n1 = sc.nextDouble();
+            System.out.print("Ingrese el segundo número: ");
+            double n2 = sc.nextDouble();
+            System.out.print("Ingrese el tercer número: ");
+            double n3 = sc.nextDouble();
+
+            // 1. Encontrar el mayor usando Math.max
+            double mayor = Math.max(n1, Math.max(n2, n3));
+            System.out.println("El número mayor es: " + mayor);
+
+            // 2. Extra: Identificar si hay números iguales (Condicionales anidados)
+            if (n1 == n2 && n2 == n3) {
+                System.out.println("Los tres números son iguales.");
+            } else {
+                if (n1 == n2 || n1 == n3 || n2 == n3) {
+                    System.out.print("Hay números repetidos: ");
+                    if (n1 == n2) System.out.println(n1 + " y " + n2 + " son iguales.");
+                    else if (n1 == n3) System.out.println(n1 + " y " + n3 + " son iguales.");
+                    else System.out.println(n2 + " y " + n3 + " son iguales.");
+                } else {
+                    System.out.println("Todos los números son diferentes.");
+                }
+            }
+
+            sc.close();
+        }
+    }
