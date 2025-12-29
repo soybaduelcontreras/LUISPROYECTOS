@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Adivina_el_número {
+    public static void main(String[] args) {
+        // Inicialización de variables
+        Scanner lector = new Scanner(System.in);
+        Random generador = new Random();
+
+        int numeroSecreto = generador.nextInt(50) + 1; // Genera entre 1 y 50
+        int intentoUsuario = 0;
+        int contadorIntentos = 0;
+
+        System.out.println("🎯 ¡Bienvenido al juego! He pensado un número entre 1 y 50, Adivina cual es????");
+
+        // Bucle de juego
+        while (intentoUsuario != numeroSecreto) {
+            System.out.print("Introduce tu número: ");
+            intentoUsuario = lector.nextInt();
+            contadorIntentos++;
+
+            if (intentoUsuario < numeroSecreto) {
+                System.out.println("❌ Es MAYOR que " + intentoUsuario);
+            } else if (intentoUsuario > numeroSecreto) {
+                System.out.println("❌ Es MENOR que " + intentoUsuario);
+            } else {
+                System.out.println("\n🎉 ¡Felicidades! Has Ganado.");
+                System.out.println("📊 Total de intentos: " + contadorIntentos);
+            }
+        }
+
+        lector.close();
+    }
+}
