@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Calculadora_Simple {
+
+    public static void main(String[] args) {
+        // Crear el objeto Scanner para leer datos desde la consola
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println(" Calculadora ");
+
+        // Lectura de datos
+        System.out.print("Ingresa el primer número: ");
+        double num1 = teclado.nextDouble();
+
+        System.out.print("Ingresa el segundo número: ");
+        double num2 = teclado.nextDouble();
+
+        // Menú de opciones
+        System.out.println("\nElige una operación:");
+        System.out.println("1. Suma (+)");
+        System.out.println("2. Resta (-)");
+        System.out.println("3. Multiplicación (*)");
+        System.out.println("4. División (/)");
+        System.out.print("Opción: ");
+        int opcion = teclado.nextInt();
+
+        // Estructura switch para procesar la elección
+        switch (opcion) {
+            case 1:
+                System.out.println("Resultado: " + (num1 + num2));
+                break;
+            case 2:
+                System.out.println("Resultado: " + (num1 - num2));
+                break;
+            case 3:
+                System.out.println("Resultado: " + (num1 * num2));
+                break;
+            case 4:
+                // División entre cero
+                if (num2 != 0) {
+                    System.out.println("Resultado: " + (num1 / num2));
+                } else {
+                    System.out.println("Error: No se puede dividir entre cero.");
+                }
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
+
+        teclado.close(); // Cerrar
+    }
+}
