@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+
+public class Numero_par_impar {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Introduce un número entero: ");
+        int numero = teclado.nextInt();
+
+        // 1. Determinar si es par o impar
+        if (numero % 2 == 0) {
+            System.out.println("El número " + numero + " es PAR.");
+        } else {
+            System.out.println("El número " + numero + " es IMPAR.");
+        }
+
+        // 2. Extra: Determinar si es positivo, negativo o cero
+        if (numero > 0) {
+            System.out.println("Además, es un número POSITIVO.");
+        } else if (numero < 0) {
+            System.out.println("Además, es un número NEGATIVO.");
+        } else {
+            System.out.println("Además, el número es CERO.");
+        }
+
+        teclado.close();
+    }
+}
