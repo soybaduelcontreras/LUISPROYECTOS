@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Menu_Interactivo {
+    public static void main(String[] args) {
+        // Instancia de Scanner para leer la entrada del usuario
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        double num1, num2, resultado;
+
+        // El bloque do-while garantiza que el menú se muestre al menos una vez
+        do {
+            System.out.println("\n--- 🧮 MENÚ DE CALCULADORA ---");
+            System.out.println("1️⃣ Sumar dos números");
+            System.out.println("2️⃣ Restar dos números");
+            System.out.println("3️⃣ Multiplicar dos números");
+            System.out.println("4️⃣ Salir");
+            System.out.print("Selecciona una opción: ");
+
+            opcion = sc.nextInt();
+
+            // Estructura switch para manejar las opciones del menú
+            switch (opcion) {
+                case 1:
+                    System.out.print("Introduce el primer número: ");
+                    num1 = sc.nextDouble();
+                    System.out.print("Introduce el segundo número: ");
+                    num2 = sc.nextDouble();
+                    resultado = num1 + num2;
+                    System.out.println("✅ Resultado de la suma: " + resultado);
+                    break;
+
+                case 2:
+                    System.out.print("Introduce el primer número: ");
+                    num1 = sc.nextDouble();
+                    System.out.print("Introduce el segundo número: ");
+                    num2 = sc.nextDouble();
+                    resultado = num1 - num2;
+                    System.out.println("✅ Resultado de la resta: " + resultado);
+                    break;
+
+                case 3:
+                    System.out.print("Introduce el primer número: ");
+                    num1 = sc.nextDouble();
+                    System.out.print("Introduce el segundo número: ");
+                    num2 = sc.nextDouble();
+                    resultado = num1 * num2;
+                    System.out.println("✅ Resultado de la multiplicación: " + resultado);
+                    break;
+
+                case 4:
+                    System.out.println("👋 Saliendo del programa... ¡Hasta luego!");
+                    break;
+
+                default:
+                    System.out.println("⚠️ Opción no válida. Inténtalo de nuevo.");
+            }
+
+        } while (opcion != 4); // El bucle continúa mientras la opción no sea 4
+
+        sc.close(); // Cerramos el scanner para liberar recursos
+    }
+}
