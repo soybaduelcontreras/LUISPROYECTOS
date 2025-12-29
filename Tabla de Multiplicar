@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Tabla_de_Multiplicar  {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            // Pedir el número base
+            System.out.print("Introduce el número a multiplicar: ");
+            int numero = scanner.nextInt();
+
+            // Extra: Pedir el límite de la tabla
+            System.out.print("¿Hasta qué número quieres multiplicar? (ej. 3, 5, 10): ");
+            int limite = scanner.nextInt();
+
+            System.out.println("\n--- Tabla del " + numero + " ---");
+
+            // Bucle para generar la tabla
+            for (int i = 1; i <= limite; i++) {
+                // Formato de salida: %d es para enteros, \t para tabulación
+                System.out.printf("%d x %d = %d%n", numero, i, (numero * i));
+            }
+
+            scanner.close();
+        }
+    }
+
