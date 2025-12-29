@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Suma_hasta_que_el_usuario_diga_No  {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        double sumaTotal = 0;
+        int contadorNumeros = 0;
+        String respuesta = "";
+
+        System.out.println(" Calculadora, Suma tus numeros ");
+
+        // El bucle se ejecuta mientras la respuesta NO sea "no"
+        while (!respuesta.equalsIgnoreCase("no")) {
+            System.out.print("Introduce un número: ");
+
+            // Validar que la entrada sea un número
+            if (teclado.hasNextDouble()) {
+                sumaTotal += teclado.nextDouble();
+                contadorNumeros++;
+            } else {
+                System.out.println("¡Error! Eso no es un número válido.");
+                teclado.next(); // Limpiar el buffer
+                continue;
+            }
+
+            System.out.print("¿Quieres agregar otro número? (Escribe 'no' para salir): ");
+            respuesta = teclado.next();
+        }
+
+        // Resultado final
+        System.out.println("\n-------------------------------------");
+        System.out.println("Suma total: " + sumaTotal);
+        System.out.println("Números ingresados: " + contadorNumeros);
+        System.out.println("¡Gracias por usar el programa!");
+
+        teclado.close();
+    }
+}
