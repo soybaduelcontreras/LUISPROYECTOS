@@ -1,0 +1,17 @@
+public class Numeros_pares {
+    public static void main(String[] args) {
+        int contadorPares = 0;
+
+        System.out.println("Números pares entre 1 y 100:");
+
+        for (int i = 1; i <= 100; i++) {
+            // Condición: si el residuo de la división entre 2 es 0, es par
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+                contadorPares++;
+            }
+        }
+
+        System.out.println("\n\nTotal de números pares encontrados: " + contadorPares);
+    }
+}
